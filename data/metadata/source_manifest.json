@@ -1,0 +1,39 @@
+{
+  "generated_at": "2026-11-09T18:45:32.054Z",
+  "job_id": "job-1794249929190-2d9773b5",
+  "requested": {
+    "bbox": "88.0,20.5,92.8,26.7",
+    "day_range": 1,
+    "products": [
+      "MODIS_NRT",
+      "VIIRS_NOAA20_NRT",
+      "VIIRS_NOAA21_NRT"
+    ]
+  },
+  "outcomes": [
+    {
+      "source": "VIIRS_NOAA20_NRT",
+      "ok": true,
+      "raw_file": "data\\raw\\VIIRS_NOAA20_NRT\\2026-11-09T18-45-30-470Z_last1d_7f26594fbe9a.csv",
+      "checksum": "7f26594fbe9a40d6ace7f35e3829219eda5651dddf6a4e12c1dfa76fa87bc66e",
+      "records": 12
+    },
+    {
+      "source": "VIIRS_NOAA21_NRT",
+      "ok": true,
+      "raw_file": "data\\raw\\VIIRS_NOAA21_NRT\\2026-11-09T18-45-31-672Z_last1d_87b3ad1f0172.csv",
+      "checksum": "87b3ad1f01720f56a9295af876091c795d94e8cca93ba49790f7fdfaf0cc4714",
+      "records": 17
+    },
+    {
+      "source": "MODIS_NRT",
+      "ok": true,
+      "raw_file": "data\\raw\\MODIS_NRT\\2026-11-09T18-45-32-053Z_last1d_483591ff96bb.csv",
+      "checksum": "483591ff96bbed584fe0119fa8b26317b1fb5eb9c30ac248020b76432c52c1e8",
+      "records": 2
+    }
+  ],
+  "records_added": 31,
+  "duplicate_records": 0,
+  "note": "Checksums verify file integrity, not NASA authenticity."
+}

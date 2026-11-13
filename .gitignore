@@ -1,0 +1,139 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.local
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+data/*.db
+data/*.sqlite
+
+# Data files (large downloads)
+data/raw/*.csv
+data/raw/*.zip
+data/raw/*.tar.gz
+data/archive/
+
+# Redis dump
+dump.rdb
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.temp
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Certificates and keys
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+
+# Firebase
+.firebase/
+firebase-debug.log*
+
+# Vercel
+.vercel
+
+# Turborepo
+.turbo
+
+# Netlify
+.netlify
+
+# Storybook
+storybook-static
+
+# Sentry
+.sentryclirc
+
+# Uploadcare
+.uploadcare
+
+# API keys and secrets (if accidentally committed)
+FIRMS_MAP_KEY
+DATABASE_URL
+REDIS_URL
+AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY
+
+# Historical FIRMS archive (provided locally, never commit)
+Modis and Virs Data/
+data/historical/
+
+# Local audit scratch
+.tmp_analysis/
+
+# AgniCalendar harmonized dataset (generated, never commit)
+Harmonized Data Set/
+data/agnicalendar/

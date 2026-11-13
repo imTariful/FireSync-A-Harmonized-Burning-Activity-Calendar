@@ -1,0 +1,26 @@
+{
+  "generated_at": "2026-11-09T18:45:32.054Z",
+  "job": {
+    "id": "job-1794249929190-2d9773b5",
+    "sensor": "VIIRS",
+    "satellite": "FIRMS Area API",
+    "region": "bbox 88.0,20.5,92.8,26.7",
+    "date_range": "last 1 day(s)",
+    "status": "completed",
+    "records_imported": 31,
+    "source_endpoint": "https://firms.modaps.eosdis.nasa.gov/api/area/csv",
+    "retrieved_at": "2026-11-09T18:45:32.054Z",
+    "checksum": "a77c56f289963faaa5df5b2f9e853539482b7c7f756777dd6fa615ca762489e8",
+    "created_at": "2026-11-09T18:45:29.190Z",
+    "source_products": [
+      "MODIS_NRT",
+      "VIIRS_NOAA20_NRT",
+      "VIIRS_NOAA21_NRT"
+    ],
+    "provenance_status": "VERIFIED",
+    "bbox": "88.0,20.5,92.8,26.7",
+    "started_at": "2026-11-09T18:45:29.190Z",
+    "completed_at": "2026-11-09T18:45:32.054Z"
+  },
+  "duplicates": 0
+}

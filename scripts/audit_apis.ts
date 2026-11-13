@@ -1,0 +1,84 @@
+/** Read-only real-project integration checks. No NASA requests, ingestion or model execution. */
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import type { AddressInfo } from 'node:net';
+import { createApp } from '../src/server/app';
+import { closeAgniConnection } from '../src/server/agnicalendar';
+const { app } = createApp({ env: {}, watchlistScheduler: false });
+const server = app.listen(0, '127.0.0.1');
+await new Promise<void>((resolve) => server.once('listening', resolve));
+const base = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
+const checks: Record<string, unknown>[] = [];
+async function get(url: string, status = 200) {
+  const start = performance.now();
+  const response = await fetch(base + url, { signal: AbortSignal.timeout(60_000) });
+  const body = await response.json();
+  assert.equal(response.status, status, url);
+  checks.push({ url, status: response.status, ms: performance.now() - start, rows: body.rows?.length, peak_rss_kb: process.resourceUsage().maxRSS });
+  return body;
+}
+try {
+  const status = await get('/api/v1/agnicalendar/status');
+  assert.equal(status.rows, 30361118);
+  const archive = await get('/api/v1/history/status');
+  assert.equal(archive.available, true);
+  checks.push({ archive_sensors: archive.sensors });
+  const anomaly = await get('/api/v1/history/month-anomaly?year=2012&month=1&sensor=VIIRS&country=Bangladesh');
+  assert.ok(anomaly.rows.every((r: { ratio: number | null }) => r.ratio === null));
+  const series = await get('/api/v1/agnicalendar/calendar?country=Bangladesh&layer=aqua&daynight=day&year=2025&start_year=2002&end_year=2025');
+  assert.ok(series.rows.every((r: { year: number }) => r.year === 2025));
+  assert.equal(series.rows.find((r: { month: number }) => r.month === 3).detections, 980);
+  const cells = await get('/api/v1/agnicalendar/cells?country=Bangladesh&year=2025&month=3&start_year=2002&end_year=2025&daynight=day&limit=15');
+  assert.ok(cells.rows.length > 0);
+  const comparison = await get('/api/v1/agnicalendar/comparison?country=Bangladesh&year=2025&month=3');
+  assert.equal(comparison.rows[0].aqua_all_observed, 980);
+  assert.equal(comparison.rows[0].aqua_supported, 966);
+  assert.equal(comparison.rows[0].snpp_supported, 2693);
+  const intelligence = await get('/api/v1/agnicalendar/intelligence?country=Bangladesh&year=2025&start_year=2002&end_year=2025&daynight=day');
+  assert.ok(intelligence.comparisons.every((c: { baseline_years: number[] }) => !c.baseline_years.includes(2025)));
+  const provenance = await get('/api/v1/agnicalendar/provenance');
+  assert.equal(provenance.model_id, 'RANDOM_FOREST_B');
+  assert.equal(provenance.validation_metrics, null);
+  const geo = await get('/api/v1/agnicalendar/cells?bbox=88,20,93,27&year=2025&month=3&daynight=day&limit=2000');
+  assert.ok(geo.rows.length > 0);
+  assert.ok(geo.rows.every((r: { lon: number; lat: number }) => r.lon >= 88 && r.lon <= 93 && r.lat >= 20 && r.lat <= 27));
+  const polygon = await get('/api/v1/agnicalendar/series?aoi=88,20;93,20;88,27&year=2025&month=3&daynight=day');
+  assert.ok(polygon.rows.length > 0);
+  await get('/api/v1/agnicalendar/series?aoi=bad', 400);
+  await get('/api/v1/agnicalendar/series?start_year=2025&end_year=2002', 400);
+  await get('/api/v1/agnicalendar/intelligence', 400);
+  await get('/api/v1/fires?area=90,22,91,23', 503);
+  const watchResponse = await fetch(base + '/api/v1/watchlists', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ name: 'Isolated API verification', bbox: '88,20,93,27', condition: { days: 1, sensors: 'ALL', min_detections: 1, trigger: 'clusters' } }) });
+  assert.equal(watchResponse.status, 201);
+  const watch = await watchResponse.json();
+  const watchCheck = await fetch(base + `/api/v1/watchlists/${watch.watchlist.id}/check`, { method: 'POST' });
+  assert.equal(watchCheck.status, 503); // Missing key must never become a zero-detection success.
+  const watchLists = await get('/api/v1/watchlists');
+  assert.equal(watchLists.alerts.length, 0);
+  assert.ok(watchLists.watchlists.every((w: object) => !('seen_observations' in w)));
+  checks.push({ url: 'watchlist create/check missing key', create_status: watchResponse.status, check_status: watchCheck.status, alerts: 0 });
+  const exp = await fetch(base + '/api/v1/agnicalendar/export/series.csv?country=Bangladesh&year=2025&daynight=day');
+  assert.equal(exp.status, 200);
+  const csv = await exp.text();
+  assert.match(csv, /not individual detections/);
+  assert.match(csv, /country.*Bangladesh/);
+  assert.match(csv, /product_population/);
+  checks.push({ url: 'monthly CSV', status: exp.status, bytes: csv.length });
+  const streamed = await fetch(base + '/api/v1/agnicalendar/export/cell-months.csv?country=Bangladesh&year=2025&month=3&daynight=day');
+  assert.equal(streamed.status, 200);
+  const gridCsv = await streamed.text();
+  assert.match(gridCsv, /prediction_support_status_day/);
+  assert.match(gridCsv, /cell_id x UTC_month x fire_type/);
+  assert.ok(gridCsv.split('\n').filter((line) => line.startsWith('EPSG')).length > 15);
+  checks.push({ url: 'streaming grid-cell CSV', status: streamed.status, bytes: gridCsv.length, grid_rows: gridCsv.split('\n').filter((line) => line.startsWith('EPSG')).length });
+  const global = await get('/api/v1/agnicalendar/series?layer=aqua&daynight=day&start_year=2002&end_year=2025');
+  assert.equal(global.rows.length, 282);
+  checks.push({ result: 'all assertions passed', actual_target: series.rows.find((r: { month: number }) => r.month === 3), actual_baseline: intelligence.comparisons[2], actual_comparison: comparison.rows, memory: process.memoryUsage() });
+} finally {
+  server.closeAllConnections();
+  await new Promise<void>((resolve) => server.close(() => resolve()));
+  await closeAgniConnection();
+  fs.mkdirSync('reports/audit', { recursive: true });
+  fs.writeFileSync('reports/audit/api-verification.json', JSON.stringify(checks, null, 2));
+}
+console.log(JSON.stringify(checks, null, 2));

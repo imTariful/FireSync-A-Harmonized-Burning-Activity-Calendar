@@ -1,0 +1,76 @@
+# FireSync Docker Compose
+#
+# The app service is the only required service. PostgreSQL/PostGIS and Redis are optional
+# profiles and are NOT integrated into the application yet. Do not describe them as active.
+#
+# Required for the app:
+#   FIRMS_MAP_KEY (optional: live FIRMS and ingestion stay disabled without it)
+#
+# Optional PostGIS profile requires POSTGRES_PASSWORD to be set explicitly:
+#   docker compose --profile postgis up
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: firesync-app
+    environment:
+      PORT: "3000"
+      FIRMS_MAP_KEY: ${FIRMS_MAP_KEY:-}
+      FIRMS_BASE_URL: ${FIRMS_BASE_URL:-}
+      FIRESYNC_STORE_PATH: /app/data/store/firesync_store.json
+    ports:
+      - "${PORT:-3000}:3000"
+    volumes:
+      - firesync_data:/app/data
+    healthcheck:
+      test:
+        [
+          "CMD",
+          "node",
+          "-e",
+          "fetch('http://127.0.0.1:3000/api/v1/health').then(r=>{if(!r.ok)process.exit(1)}).catch(()=>process.exit(1))",
+        ]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    restart: unless-stopped
+
+  postgis:
+    profiles: ["postgis"]
+    image: postgis/postgis:16-3.4
+    container_name: firesync-postgis
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-firesync}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD explicitly; there is no default password}
+      POSTGRES_DB: ${POSTGRES_DB:-firesync}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgis_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-firesync} -d ${POSTGRES_DB:-firesync}"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    profiles: ["redis"]
+    image: redis:7-alpine
+    container_name: firesync-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  firesync_data:
+  postgis_data:
+  redis_data:

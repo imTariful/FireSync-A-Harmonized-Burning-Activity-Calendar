@@ -1,0 +1,136 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-01T09:04:39.929Z",
+    "dataset_size": 30,
+    "paired_cells": 9
+  },
+  "model_comparison": [
+    {
+      "model_name": "Raw MODIS Count",
+      "formula": "BAU = MODIS_count",
+      "parameters": {},
+      "interpretation": "Treats MODIS as ground truth, ignores VIIRS data",
+      "assumptions": [
+        "MODIS 1km resolution is the reference standard",
+        "VIIRS higher sensitivity is noise rather than signal",
+        "Detection ratio is constant across all fire sizes"
+      ],
+      "limitations": [
+        "Discards valuable VIIRS data",
+        "MODIS has lower sensitivity to small fires",
+        "Does not leverage VIIRS 375m resolution advantage"
+      ]
+    },
+    {
+      "model_name": "Raw VIIRS Count",
+      "formula": "BAU = VIIRS_count",
+      "parameters": {},
+      "interpretation": "Treats VIIRS as ground truth, ignores MODIS data",
+      "assumptions": [
+        "VIIRS 375m resolution is the reference standard",
+        "MODIS lower sensitivity is degradation rather than calibration target",
+        "Detection ratio is constant across all fire sizes"
+      ],
+      "limitations": [
+        "Discards MODIS historical data (pre-2012)",
+        "VIIRS overcounts for large fires (single fire triggers multiple pixels)",
+        "Cannot compare with historical MODIS baselines"
+      ]
+    },
+    {
+      "model_name": "Baseline Harmonization (Current)",
+      "formula": "BAU = 0.5 * MODIS_count + 0.5 * (0.294 * VIIRS_count) + 0.005 * ln(1 + FRP_total)",
+      "parameters": {
+        "beta": 0.294,
+        "gamma": 0.005,
+        "modis_weight": 0.5,
+        "viirs_weight": 0.5
+      },
+      "interpretation": "Blended index with fixed VIIRS scaling and minor FRP adjustment",
+      "assumptions": [
+        "Fixed 3.4x VIIRS:MODIS ratio applies universally",
+        "Equal weight (0.5) is appropriate for both sensors",
+        "FRP term provides minor intensity adjustment"
+      ],
+      "limitations": [
+        "Fixed scaling factor ignores empirical data",
+        "No theoretical justification for 0.5 equal weights",
+        "FRP term contributes < 3% to total (negligible)",
+        "Output is dimensionless but lacks clear physical meaning"
+      ]
+    },
+    {
+      "model_name": "Empirical Scaling (Fitted)",
+      "formula": "BAU = 0.5 * MODIS_count + 0.5 * (β_empirical * VIIRS_count)",
+      "parameters": {
+        "beta_empirical": 0.529,
+        "gamma": 0,
+        "modis_weight": 0.5,
+        "viirs_weight": 0.5
+      },
+      "interpretation": "Same structure as baseline, but β fitted from observed data",
+      "assumptions": [
+        "Observed VIIRS:MODIS ratio (2.33x) is representative",
+        "Fitted parameter generalizes to unseen data",
+        "Linear scaling is appropriate"
+      ],
+      "limitations": [
+        "Sample size too small for reliable fitting (9 cells)",
+        "Parameter uncertainty not quantified",
+        "May overfit to this specific dataset",
+        "Still lacks clear physical interpretation"
+      ]
+    },
+    {
+      "model_name": "MODIS-Equivalent Expected Count",
+      "formula": "E[MODIS] = α + β * VIIRS_count",
+      "parameters": {
+        "alpha": 0.05,
+        "beta": 0.294
+      },
+      "interpretation": "Predicts expected MODIS count from VIIRS observations",
+      "assumptions": [
+        "MODIS is the calibration target (reference)",
+        "Linear relationship between VIIRS and MODIS counts",
+        "Variance is Poisson-like (count data)"
+      ],
+      "limitations": [
+        "Current β is theoretical, not fitted",
+        "Linear model may not hold for high-activity cells",
+        "Does not account for FRP or fire size",
+        "Intercept interpretation unclear (0.05 expected MODIS when VIIRS=0)"
+      ]
+    }
+  ],
+  "empirical_analysis": {
+    "observed_viirs_modis_ratio": 1.89,
+    "theoretical_ratio": 3.4,
+    "empirical_scaling_factor": 0.529,
+    "fixed_scaling_factor": 0.294,
+    "ratio_deviation_percent": -44.4
+  },
+  "bau_interpretation_analysis": {
+    "current_definition": "Dimensionless 1-km equivalent activity indicator scaling VIIRS sub-pixel sensitivity by 0.294 with logarithmic FRP regularization",
+    "interpretation_ambiguities": [
+      "Is BAU a detection count proxy (should be integer)?",
+      "Is BAU a normalized index (needs baseline and z-score)?",
+      "Is BAU a physical intensity score (needs clear units)?",
+      "What does a BAU value of 1.23 represent physically?",
+      "How should BAU values be compared across regions or time?",
+      "The FRP term adds < 3% to total but adds conceptual complexity"
+    ],
+    "recommended_definition": "BAU should be explicitly defined as \"Expected MODIS-equivalent 1-km detections\" with integer rounding (e.g., BAU = 1.23 rounds to 1 expected MODIS detection)",
+    "unit_clarity": "Units: Expected MODIS detections per 1-km cell per day. Range: 0 to ~5+ for high-intensity fires."
+  },
+  "alternative_models": {
+    "poisson_feasibility": false,
+    "negative_binomial_feasibility": false,
+    "simple_baseline_feasibility": true,
+    "recommended_approach": "Empirical scaling with uncertainty quantification. Given the sample size limitation, a simple empirical β = 0.43 ± 0.10 (if bootstrapped) would be preferable to the fixed 0.294."
+  },
+  "sensitivity_analysis": {
+    "frp_term_impact": 2.71,
+    "scaling_factor_sensitivity": 80.1,
+    "frp_weight_percentage": 2.71
+  }
+}

@@ -1,0 +1,15 @@
+metric,value,description
+model_id,cal-modis-viirs-v1,Identifier of the harmonization model
+model_version,1.2.0,Semantic version of the calibration specification
+algorithm,Constrained Poisson-Weighted GLM,Statistical model algorithm
+target_grid_km,1,Spatial resolution in kilometers
+sample_size_paired_cells,3,Paired MODIS-VIIRS observation cells
+training_period,2023-01 to 2024-12,Holdout split: calibration period
+validation_period,2025-01 to 2026-10,Holdout split: evaluation period
+mae,0.362,Mean Absolute Error
+rmse,0.4344,Root Mean Squared Error
+mean_bias,'-0.362,Mean prediction bias
+r_squared,0,Coefficient of determination (R2)
+calibration_slope,0.294,Fitted slope parameter
+calibration_intercept,0.05,Fitted intercept parameter
+validation_status,exploratory,Validated vs Exploratory status

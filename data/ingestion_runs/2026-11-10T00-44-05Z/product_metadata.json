@@ -1,0 +1,29 @@
+{
+  "generated_at": "2026-11-09T18:40:54.133Z",
+  "products": [
+    {
+      "product": "VIIRS_NOAA20_NRT",
+      "raw_file": "data\\raw\\VIIRS_NOAA20_NRT\\2026-11-09T18-40-52-562Z_last1d_7f26594fbe9a.csv",
+      "sha256": "7f26594fbe9a40d6ace7f35e3829219eda5651dddf6a4e12c1dfa76fa87bc66e",
+      "records": 12,
+      "status": "completed",
+      "error": null
+    },
+    {
+      "product": "VIIRS_NOAA21_NRT",
+      "raw_file": "data\\raw\\VIIRS_NOAA21_NRT\\2026-11-09T18-40-53-797Z_last1d_87b3ad1f0172.csv",
+      "sha256": "87b3ad1f01720f56a9295af876091c795d94e8cca93ba49790f7fdfaf0cc4714",
+      "records": 17,
+      "status": "completed",
+      "error": null
+    },
+    {
+      "product": "MODIS_NRT",
+      "raw_file": "data\\raw\\MODIS_NRT\\2026-11-09T18-40-54-132Z_last1d_483591ff96bb.csv",
+      "sha256": "483591ff96bbed584fe0119fa8b26317b1fb5eb9c30ac248020b76432c52c1e8",
+      "records": 2,
+      "status": "completed",
+      "error": null
+    }
+  ]
+}

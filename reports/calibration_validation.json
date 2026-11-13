@@ -1,0 +1,92 @@
+{
+  "evaluation_metadata": {
+    "generated_at": "2026-11-09T17:23:16.077Z",
+    "evaluator": "FireSync calibration diagnostic (not an independent validation authority)",
+    "evaluation_type": "fixed-coefficient in-sample diagnostic + temporal holdout criteria check",
+    "provenance_warning": "The bundled archive is UNVERIFIED: raw NASA source files and download manifests are absent.",
+    "fixed_formula": {
+      "slope": 0.294,
+      "intercept": 0.05,
+      "note": "Fixed exploratory assumption; no coefficient was fitted by this script."
+    }
+  },
+  "archive": {
+    "total_observations": 30,
+    "modis_observations": 9,
+    "viirs_observations": 21,
+    "paired_1km_cells": 9,
+    "training_partition_observations": 20,
+    "validation_partition_observations": 10,
+    "provenance_status": "UNVERIFIED"
+  },
+  "fixed_coefficient_diagnostic": {
+    "model_id": "cal-modis-viirs-v1",
+    "model_version": "2.0.0",
+    "algorithm": "Fixed exploratory coefficient (not fitted)",
+    "target_grid_km": 1,
+    "sample_size_paired_cells": 9,
+    "training_period": "none (fixed coefficient, not fitted)",
+    "validation_period": "none (in-sample, no temporal holdout)",
+    "mae": 0.3947,
+    "rmse": 0.4502,
+    "mean_bias": -0.3947,
+    "r_squared": null,
+    "calibration_slope": 0.294,
+    "calibration_intercept": 0.05,
+    "status": "INSUFFICIENT",
+    "limitations": [
+      "Only 9 paired 1-km cells (at least 50 are required even to consider validation).",
+      "Reference variance is zero (every MODIS count is identical), so R² is undefined and reported as null.",
+      "The 0.294 scale factor is a fixed exploratory assumption from the literature, not a fitted Bangladesh coefficient.",
+      "Metrics are in-sample: no independent temporal or spatial holdout has been evaluated.",
+      "Agreement with a MODIS reference does not constitute direct ground-truth validation.",
+      "Cloud occlusion and differing overpass times affect diurnal fire detection.",
+      "Bow-tie pixel expansion in MODIS off-nadir tracks increases uncertainty at scan edges."
+    ],
+    "validation_criteria": [
+      "At least 50 paired 1-km cells.",
+      "Non-zero MODIS reference variance so R² is defined.",
+      "An independent temporal or spatial holdout that the model was not fitted on.",
+      "Finite slope uncertainty and holdout error metrics."
+    ],
+    "n_training": 9,
+    "n_validation": 0,
+    "independent_validation": false,
+    "interpretation": "This scores one fixed formula on the same cells used to describe it. It cannot validate the model and never returns VALIDATED."
+  },
+  "temporal_holdout": {
+    "model_id": "cal-modis-viirs-holdout",
+    "model_version": "2.0.0",
+    "algorithm": "Ordinary least squares with temporal holdout",
+    "target_grid_km": 1,
+    "sample_size_paired_cells": 9,
+    "training_period": "2024-03-15 to 2024-04-18",
+    "validation_period": "2025-03-10 to 2026-03-22",
+    "mae": 0,
+    "rmse": 0,
+    "mean_bias": 0,
+    "r_squared": null,
+    "calibration_slope": 0,
+    "calibration_intercept": 1,
+    "status": "INSUFFICIENT",
+    "limitations": [
+      "Training cells: 6 (need 30); validation cells: 3 (need 10).",
+      "Independent temporal holdout has not met the evidence requirements, so the model is not VALIDATED.",
+      "In-sample agreement must never be reported as independent validation."
+    ],
+    "validation_criteria": [
+      "At least 30 paired cells in the training split.",
+      "At least 10 paired cells in the independent validation split.",
+      "Temporal separation: every validation date is later than every training date.",
+      "The validation reference (MODIS) has non-zero variance so R² is defined.",
+      "The fitted slope, intercept, R², MAE, RMSE and bias are all finite."
+    ],
+    "n_training": 6,
+    "n_validation": 3,
+    "independent_validation": false,
+    "interpretation": "VALIDATED requires all explicit criteria. Otherwise the result is INSUFFICIENT or EXPLORATORY and must not be reported as validation."
+  },
+  "scientific_status": "INSUFFICIENT",
+  "validated": false,
+  "r_squared_definition": "null: R² is undefined here (too few cells or zero reference variance). It is not zero."
+}

@@ -1,0 +1,36 @@
+{
+  "total": 21,
+  "counts": {
+    "MODIS": 1,
+    "VIIRS": 20
+  },
+  "errors": [],
+  "retrieved_at": "2026-11-12T16:35:13.913Z",
+  "cached": false,
+  "sample": {
+    "id": "live-01d27def73726f6b",
+    "source_record_id": "VIIRS_NOAA20_NRT|21.915|90.57521|2026-11-12|0722",
+    "latitude": 21.915,
+    "longitude": 90.57521,
+    "acq_date": "2026-11-12",
+    "acq_time": "0722",
+    "datetime_utc": "2026-11-12T07:22:00Z",
+    "sensor": "VIIRS",
+    "satellite": "NOAA-20",
+    "product": "VIIRS_NOAA20_NRT",
+    "processing_version": "2.0NRT",
+    "confidence": "n",
+    "confidence_category": "nominal",
+    "frp_mw": 1.67,
+    "bright_ti4": 328.22,
+    "bright_ti5": 297.26,
+    "scan": 0.41,
+    "track": 0.37,
+    "daynight": "D",
+    "source_file": "FIRMS API VIIRS_NOAA20_NRT",
+    "retrieved_at": "2026-11-12T16:35:13.913Z",
+    "quality_flags": "",
+    "record_hash": "01d27def73726f6b6cb2889cb7735f9da87c9a9f617501476c71212b30aebcd7",
+    "provenance_status": "VERIFIED"
+  }
+}

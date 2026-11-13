@@ -1,0 +1,246 @@
+[
+  {
+    "url": "/api/v1/agnicalendar/status",
+    "status": 200,
+    "ms": 1049.3029999999999,
+    "peak_rss_kb": 201724
+  },
+  {
+    "url": "/api/v1/history/status",
+    "status": 200,
+    "ms": 66.67989999999986,
+    "peak_rss_kb": 201724
+  },
+  {
+    "archive_sensors": {
+      "MODIS": {
+        "years": [
+          2000,
+          2001,
+          2002,
+          2003,
+          2004,
+          2005,
+          2006,
+          2007,
+          2008,
+          2009,
+          2010,
+          2011,
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "min_date": "2000-11-01",
+        "max_date": "2025-12-31",
+        "rows": 111424405
+      },
+      "VIIRS": {
+        "years": [
+          2012,
+          2013,
+          2014,
+          2015,
+          2016,
+          2017,
+          2018,
+          2019,
+          2020,
+          2021,
+          2022,
+          2023,
+          2024,
+          2025
+        ],
+        "min_date": "2012-01-20",
+        "max_date": "2025-12-31",
+        "rows": 281144026
+      }
+    }
+  },
+  {
+    "url": "/api/v1/history/month-anomaly?year=2012&month=1&sensor=VIIRS&country=Bangladesh",
+    "status": 200,
+    "ms": 28.931600000000117,
+    "rows": 1,
+    "peak_rss_kb": 208428
+  },
+  {
+    "url": "/api/v1/agnicalendar/calendar?country=Bangladesh&layer=aqua&daynight=day&year=2025&start_year=2002&end_year=2025",
+    "status": 200,
+    "ms": 218.73720000000003,
+    "rows": 12,
+    "peak_rss_kb": 418088
+  },
+  {
+    "url": "/api/v1/agnicalendar/cells?country=Bangladesh&year=2025&month=3&start_year=2002&end_year=2025&daynight=day&limit=15",
+    "status": 200,
+    "ms": 80.45370000000003,
+    "rows": 15,
+    "peak_rss_kb": 418088
+  },
+  {
+    "url": "/api/v1/agnicalendar/comparison?country=Bangladesh&year=2025&month=3",
+    "status": 200,
+    "ms": 204.6003999999998,
+    "rows": 2,
+    "peak_rss_kb": 418088
+  },
+  {
+    "url": "/api/v1/agnicalendar/intelligence?country=Bangladesh&year=2025&start_year=2002&end_year=2025&daynight=day",
+    "status": 200,
+    "ms": 8693.146499999999,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/provenance",
+    "status": 200,
+    "ms": 3.003099999999904,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/cells?bbox=88,20,93,27&year=2025&month=3&daynight=day&limit=2000",
+    "status": 200,
+    "ms": 142.28129999999874,
+    "rows": 785,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/series?aoi=88,20;93,20;88,27&year=2025&month=3&daynight=day",
+    "status": 200,
+    "ms": 95.29249999999956,
+    "rows": 1,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/series?aoi=bad",
+    "status": 400,
+    "ms": 10.791699999999764,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/series?start_year=2025&end_year=2002",
+    "status": 400,
+    "ms": 15.101199999999153,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/agnicalendar/intelligence",
+    "status": 400,
+    "ms": 15.429799999999886,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/fires?area=90,22,91,23",
+    "status": 503,
+    "ms": 15.697700000000623,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "/api/v1/watchlists",
+    "status": 200,
+    "ms": 14.724899999999252,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "url": "watchlist create/check missing key",
+    "create_status": 201,
+    "check_status": 503,
+    "alerts": 0
+  },
+  {
+    "url": "monthly CSV",
+    "status": 200,
+    "bytes": 1840
+  },
+  {
+    "url": "streaming grid-cell CSV",
+    "status": 200,
+    "bytes": 92921,
+    "grid_rows": 338
+  },
+  {
+    "url": "/api/v1/agnicalendar/series?layer=aqua&daynight=day&start_year=2002&end_year=2025",
+    "status": 200,
+    "ms": 4799.1312,
+    "rows": 282,
+    "peak_rss_kb": 2179308
+  },
+  {
+    "result": "all assertions passed",
+    "actual_target": {
+      "year": 2025,
+      "month": 3,
+      "detections": 980,
+      "population_key": "61.03/61.03/RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN;61.03/UNKNOWN/RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN",
+      "frp_sum_mw": 51516.19999999999,
+      "cells_with_data": 134,
+      "partial_coverage": false
+    },
+    "actual_baseline": {
+      "year": 2025,
+      "month": 3,
+      "observed": 980,
+      "baseline_median": null,
+      "baseline_years": [
+        2023
+      ],
+      "valid_years": 1,
+      "percentile": null,
+      "ratio": null,
+      "status": "insufficient_history"
+    },
+    "actual_comparison": [
+      {
+        "daynight": "day",
+        "aqua_all_observed": 980,
+        "snpp_all_observed": 3172,
+        "aqua_supported": 966,
+        "snpp_supported": 2693,
+        "aqua_equivalent_estimate": 695.1462653631258,
+        "aqua_frp_sum_mw": 51516.2,
+        "snpp_frp_sum_mw": 67152.68999999999,
+        "supported_cell_month_types": 125,
+        "source_cell_month_types": 338,
+        "aqua_versions": "61.03",
+        "snpp_versions": "2",
+        "product_status": "RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN",
+        "quality_flags": "SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION; SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION;VIIRS_TYPE_REVISION_UNCERTAINTY"
+      },
+      {
+        "daynight": "night",
+        "aqua_all_observed": 14,
+        "snpp_all_observed": 535,
+        "aqua_supported": 14,
+        "snpp_supported": 83,
+        "aqua_equivalent_estimate": 12.145130898619199,
+        "aqua_frp_sum_mw": 788.2,
+        "snpp_frp_sum_mw": 1032.3,
+        "supported_cell_month_types": 4,
+        "source_cell_month_types": 338,
+        "aqua_versions": "61.03",
+        "snpp_versions": "2",
+        "product_status": "RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN",
+        "quality_flags": "SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION; SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION;VIIRS_TYPE_REVISION_UNCERTAINTY"
+      }
+    ],
+    "memory": {
+      "rss": 237486080,
+      "heapTotal": 26697728,
+      "heapUsed": 20126368,
+      "external": 7525495,
+      "arrayBuffers": 3083736
+    }
+  }
+]

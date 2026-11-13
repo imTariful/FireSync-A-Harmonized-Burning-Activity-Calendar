@@ -1,0 +1,1381 @@
+{
+  "date": "2026-11-12",
+  "hardware": {
+    "cpu": "Intel(R) Core(TM) i7-14700K",
+    "logical_cpus": 28,
+    "total_memory": 16934428672,
+    "free_memory": 1691508736,
+    "os": "10.0.26300"
+  },
+  "checks": {},
+  "schema": [
+    {
+      "column_name": "cell_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "grid_row",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "grid_col",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "year",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "month",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "utc_month",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "utc_month_start",
+      "column_type": "DATE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "fire_type",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_day_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_day_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "harmonized_aqua_day_estimate",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "harmonized_aqua_day_native_estimate",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "pairing_status_day",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "prediction_support_status_day",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "aqua_version_day",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_version_day",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_l_day",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_n_day",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_h_day",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_night_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_night_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "harmonized_aqua_night_estimate",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "harmonized_aqua_night_native_estimate",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "pairing_status_night",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "prediction_support_status_night",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "aqua_version_night",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_version_night",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_l_night",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_n_night",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_h_night",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "modis_aqua_unknown_dn_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_raw_source_occurrences",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_frp_sum",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_frp_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_frp_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_frp_missing_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_brightness_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_brightness_max",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_scan_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_track_mean",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_confidence_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_version_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_product_status_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_source_quality_flag_counts",
+      "column_type": "MAP(VARCHAR, UBIGINT)",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_type_classification_caveat_count",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "viirs_snpp_unknown_dn_source_member_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "grid_crs",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "grid_resolution_m",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "harmonized_aqua_total_estimate",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "prediction_support_status",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_sha256",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_day_sha256",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_night_sha256",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_version",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "prediction_policy_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "confidence_policy_id",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_output_grain",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "month_sin",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "month_cos",
+      "column_type": "DOUBLE",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_eligible_aqua_day_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_eligible_aqua_night_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_eligible_viirs_day_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "model_eligible_viirs_night_count",
+      "column_type": "BIGINT",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "product_version_status",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "source_quality_flags",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "source_sensor_identifiers",
+      "column_type": "VARCHAR",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    },
+    {
+      "column_name": "source_data_year",
+      "column_type": "INTEGER",
+      "null": "YES",
+      "key": null,
+      "default": null,
+      "extra": null
+    }
+  ],
+  "partitions": [
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2002\\part-00000.parquet",
+      "num_rows": 416449,
+      "num_row_groups": 5
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2003\\part-00000.parquet",
+      "num_rows": 775366,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2004\\part-00000.parquet",
+      "num_rows": 775156,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2005\\part-00000.parquet",
+      "num_rows": 779823,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2006\\part-00000.parquet",
+      "num_rows": 735193,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2007\\part-00000.parquet",
+      "num_rows": 775265,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2008\\part-00000.parquet",
+      "num_rows": 754240,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2009\\part-00000.parquet",
+      "num_rows": 715432,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2010\\part-00000.parquet",
+      "num_rows": 720166,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2011\\part-00000.parquet",
+      "num_rows": 718389,
+      "num_row_groups": 8
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2012\\part-00000.parquet",
+      "num_rows": 1687534,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2013\\part-00000.parquet",
+      "num_rows": 1663279,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2014\\part-00000.parquet",
+      "num_rows": 1690310,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2015\\part-00000.parquet",
+      "num_rows": 1723673,
+      "num_row_groups": 18
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2016\\part-00000.parquet",
+      "num_rows": 1663841,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2017\\part-00000.parquet",
+      "num_rows": 1643889,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2018\\part-00000.parquet",
+      "num_rows": 1619940,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2019\\part-00000.parquet",
+      "num_rows": 1677430,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2020\\part-00000.parquet",
+      "num_rows": 1688239,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2021\\part-00000.parquet",
+      "num_rows": 1625112,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2022\\part-00000.parquet",
+      "num_rows": 1550552,
+      "num_row_groups": 16
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2023\\part-00000.parquet",
+      "num_rows": 1689426,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2024\\part-00000.parquet",
+      "num_rows": 1664632,
+      "num_row_groups": 17
+    },
+    {
+      "file_name": "Harmonized Data Set\\AgniCalendar_Global_Harmonized_CellMonth\\year=2025\\part-00000.parquet",
+      "num_rows": 1607782,
+      "num_row_groups": 17
+    }
+  ],
+  "sample": [
+    {
+      "cell_id": "EPSG8857_10000m_r-325_c-526",
+      "utc_month": "2025-02",
+      "grid_crs": "EPSG:8857",
+      "grid_resolution_m": 10000,
+      "model_id": "RANDOM_FOREST_B",
+      "model_sha256": "3aa51fffe01e36b1df7c190028932d3e8736dbef1aabb7717b59e8ba0e80aeed",
+      "product_version_status": "RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN",
+      "source_quality_flags": "SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION;VIIRS_TYPE_REVISION_UNCERTAINTY",
+      "prediction_support_status_day": "APPROVED_CONDITIONAL_JOINT_POSITIVE"
+    },
+    {
+      "cell_id": "EPSG8857_10000m_r+34_c+311",
+      "utc_month": "2025-02",
+      "grid_crs": "EPSG:8857",
+      "grid_resolution_m": 10000,
+      "model_id": "RANDOM_FOREST_B",
+      "model_sha256": "3aa51fffe01e36b1df7c190028932d3e8736dbef1aabb7717b59e8ba0e80aeed",
+      "product_version_status": "RAW_VERSION_STRINGS_PRESERVED_MONTHLY_REVISION_UNKNOWN",
+      "source_quality_flags": "SOURCE_REPORTED_TYPE0_NOT_INDEPENDENTLY_VERIFIED_VEGETATION;VIIRS_TYPE_REVISION_UNCERTAINTY",
+      "prediction_support_status_day": "APPROVED_CONDITIONAL_JOINT_POSITIVE"
+    }
+  ],
+  "model_artifacts": [
+    {
+      "day_night": "DAY",
+      "local": "Harmonized Data Set/models/RANDOM_FOREST_B/DAY.joblib",
+      "sha256": "6539fa43918a71857f74d1794a44e2575556d8a90f40989ba6668d309946076e",
+      "matches": true
+    },
+    {
+      "day_night": "NIGHT",
+      "local": "Harmonized Data Set/models/RANDOM_FOREST_B/NIGHT.joblib",
+      "sha256": "1171599a5a4fb9f77f8932da29087272540cdbef892cc588d2c698220e00dd94",
+      "matches": true
+    }
+  ],
+  "benchmarks": [
+    {
+      "threads": 1,
+      "ms": 139.3694,
+      "rows": 12,
+      "first": {
+        "year": 2025,
+        "month": 1,
+        "detections": 228561
+      },
+      "memory": {
+        "rss": 99528704,
+        "heapTotal": 12050432,
+        "heapUsed": 7009840,
+        "external": 22158999,
+        "arrayBuffers": 19780107
+      },
+      "peak_rss_kb": 103676
+    },
+    {
+      "threads": 2,
+      "ms": 133.8197,
+      "rows": 12,
+      "first": {
+        "year": 2025,
+        "month": 1,
+        "detections": 228561
+      },
+      "memory": {
+        "rss": 102604800,
+        "heapTotal": 12050432,
+        "heapUsed": 7041864,
+        "external": 22159039,
+        "arrayBuffers": 19780107
+      },
+      "peak_rss_kb": 113984
+    },
+    {
+      "threads": 4,
+      "ms": 140.3822,
+      "rows": 12,
+      "first": {
+        "year": 2025,
+        "month": 1,
+        "detections": 228561
+      },
+      "memory": {
+        "rss": 105807872,
+        "heapTotal": 12050432,
+        "heapUsed": 7048776,
+        "external": 22159039,
+        "arrayBuffers": 19780107
+      },
+      "peak_rss_kb": 126372
+    }
+  ]
+}

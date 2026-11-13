@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "generated_at": "2026-11-01T09:02:56.251Z",
+    "total_observations": 30,
+    "temporal_span_days": 8,
+    "geographic_bbox": {
+      "west": 88.6189,
+      "south": 21.839,
+      "east": 92.531,
+      "north": 24.4532
+    }
+  },
+  "detection_level_analysis": {
+    "total_detections": 30,
+    "by_sensor": {
+      "MODIS": 9,
+      "VIIRS": 21
+    },
+    "by_satellite": {
+      "Terra": 4,
+      "Suomi-NPP": 14,
+      "NOAA-20": 7,
+      "Aqua": 5
+    },
+    "by_confidence": {
+      "high": 14,
+      "nominal": 16
+    },
+    "by_daynight": {
+      "D": 30
+    },
+    "frp_range": {
+      "min": 6.5,
+      "max": 94.2,
+      "mean": 24.163333333333338
+    }
+  },
+  "spatial_temporal_cells": {
+    "total_cells": 13,
+    "modis_only_cells": 0,
+    "viirs_only_cells": 4,
+    "concurrent_paired_cells": 9
+  },
+  "paired_cells_analysis": [
+    {
+      "cell_id": "2024-03-15_cell_9403_2623",
+      "date": "2024-03-15",
+      "center_lat": 22.18718034452857,
+      "center_lon": 92.21597664639181,
+      "modis_count": 1,
+      "viirs_count": 1,
+      "viirs_satellites": [
+        "Suomi-NPP",
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Terra"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 57.400000000000006,
+      "detection_density_per_km2": 2,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2024-03-16_cell_9423_2584",
+      "date": "2024-03-16",
+      "center_lat": 21.840240941779353,
+      "center_lon": 92.41210782445611,
+      "modis_count": 1,
+      "viirs_count": 3,
+      "viirs_satellites": [
+        "Suomi-NPP"
+      ],
+      "modis_satellites": [
+        "Aqua"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 125.5,
+      "detection_density_per_km2": 4,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2024-03-20_cell_9363_2861",
+      "date": "2024-03-20",
+      "center_lat": 24.32374130123372,
+      "center_lon": 91.82371429026317,
+      "modis_count": 1,
+      "viirs_count": 2,
+      "viirs_satellites": [
+        "Suomi-NPP",
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Terra"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 47.699999999999996,
+      "detection_density_per_km2": 3,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2024-04-10_cell_9036_2875",
+      "date": "2024-04-10",
+      "center_lat": 24.450514820847665,
+      "center_lon": 88.61696952891154,
+      "modis_count": 1,
+      "viirs_count": 2,
+      "viirs_satellites": [
+        "Suomi-NPP"
+      ],
+      "modis_satellites": [
+        "Aqua"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 34.4,
+      "detection_density_per_km2": 3,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2024-04-18_cell_9433_2592",
+      "date": "2024-04-18",
+      "center_lat": 21.911338905963184,
+      "center_lon": 92.51017341348829,
+      "modis_count": 1,
+      "viirs_count": 2,
+      "viirs_satellites": [
+        "Suomi-NPP"
+      ],
+      "modis_satellites": [
+        "Aqua"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 156.9,
+      "detection_density_per_km2": 3,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2024-04-18_cell_9435_2593",
+      "date": "2024-04-18",
+      "center_lat": 21.920228644541425,
+      "center_lon": 92.52978653129472,
+      "modis_count": 1,
+      "viirs_count": 1,
+      "viirs_satellites": [
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Aqua"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 86.1,
+      "detection_density_per_km2": 2,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2025-03-10_cell_9392_2653",
+      "date": "2025-03-10",
+      "center_lat": 22.45464026739888,
+      "center_lon": 92.10810449845643,
+      "modis_count": 1,
+      "viirs_count": 1,
+      "viirs_satellites": [
+        "Suomi-NPP",
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Terra"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 45.400000000000006,
+      "detection_density_per_km2": 2,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2026-03-22_cell_9417_2637",
+      "date": "2026-03-22",
+      "center_lat": 22.31193119878375,
+      "center_lon": 92.35326847103683,
+      "modis_count": 1,
+      "viirs_count": 3,
+      "viirs_satellites": [
+        "Suomi-NPP",
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Aqua"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 89.69999999999999,
+      "detection_density_per_km2": 4,
+      "spatial_extent_km": 1
+    },
+    {
+      "cell_id": "2025-11-12_cell_9088_2738",
+      "date": "2025-11-12",
+      "center_lat": 23.215280620710946,
+      "center_lon": 89.12691059187875,
+      "modis_count": 1,
+      "viirs_count": 2,
+      "viirs_satellites": [
+        "Suomi-NPP",
+        "NOAA-20"
+      ],
+      "modis_satellites": [
+        "Terra"
+      ],
+      "time_between_observations_minutes": 60,
+      "frp_total_mw": 37,
+      "detection_density_per_km2": 3,
+      "spatial_extent_km": 1
+    }
+  ],
+  "sensor_comparison": {
+    "modis_total_detections": 9,
+    "viirs_total_detections": 21,
+    "viirs_to_modis_ratio": 2.33,
+    "detection_efficiency_by_satellite": {
+      "Terra": {
+        "modis": 4,
+        "viirs": 0
+      },
+      "Suomi-NPP": {
+        "modis": 0,
+        "viirs": 14
+      },
+      "NOAA-20": {
+        "modis": 0,
+        "viirs": 7
+      },
+      "Aqua": {
+        "modis": 5,
+        "viirs": 0
+      }
+    }
+  },
+  "temporal_coverage": {
+    "distinct_dates": 8,
+    "dates_with_both_sensors": 8,
+    "dates_with_modis_only": 0,
+    "dates_with_viirs_only": 3,
+    "date_distribution": [
+      "2024-03-15",
+      "2024-03-16",
+      "2024-03-20",
+      "2024-04-10",
+      "2024-04-18",
+      "2025-03-10",
+      "2025-11-12",
+      "2026-03-22"
+    ]
+  },
+  "calibration_readiness": {
+    "paired_cell_count": 9,
+    "distinct_dates_in_pairs": 8,
+    "geographic_diversity": 8,
+    "reference_variance": 0,
+    "readiness_status": "insufficient",
+    "gaps_identified": [
+      "Insufficient paired cells: 9 < 50 threshold",
+      "Zero reference variance (uniform MODIS counts prevents R² calculation)",
+      "Limited temporal diversity: 8 dates < 20"
+    ]
+  }
+}

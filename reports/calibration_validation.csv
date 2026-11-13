@@ -1,0 +1,16 @@
+metric,value,description
+model_id,cal-modis-viirs-holdout,Identifier of the harmonization model
+model_version,2.0.0,Semantic version of the calibration specification
+algorithm,Ordinary least squares with temporal holdout,Statistical model algorithm
+target_grid_km,1,Spatial resolution in kilometers
+sample_size_paired_cells,9,Paired MODIS-VIIRS observation cells
+training_period,2024-03-15 to 2024-04-18,Holdout split: calibration period
+validation_period,2025-03-10 to 2026-03-22,Holdout split: evaluation period
+mae,0,Mean Absolute Error
+rmse,0,Root Mean Squared Error
+mean_bias,0,Mean prediction bias
+r_squared,,Coefficient of determination (R2); empty when mathematically undefined
+calibration_slope,0,Calibration slope (fixed exploratory value unless a fit is explicitly reported)
+calibration_intercept,1,Calibration intercept
+validation_status,INSUFFICIENT,INSUFFICIENT / EXPLORATORY / CALIBRATED / VALIDATED
+independent_validation,false,True only when a real holdout was evaluated

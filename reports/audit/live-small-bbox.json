@@ -1,0 +1,12 @@
+{
+  "ms": 4646,
+  "total": 0,
+  "counts": {
+    "MODIS": 0,
+    "VIIRS": 0
+  },
+  "errors": [],
+  "retrieved_at": "2026-11-12T16:27:38.194Z",
+  "cached": false,
+  "sample": null
+}
