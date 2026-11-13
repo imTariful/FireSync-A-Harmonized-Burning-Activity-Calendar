@@ -33,6 +33,16 @@ joint-positive support on a 10-km monthly grid. They are not a complete correcte
 series and must not be joined to live BAU as one continuous series. Historical patterns
 and monitoring thresholds do not predict future fires.
 
+## Dataset downloads
+
+The project datasets are available in the shared Google Drive folder:
+
+- **[Harmonization dataset](https://drive.google.com/drive/folders/1uaseoHLZFt_dBUseGtY1hH3A3brwhBtz)** — dataset used for the MODIS–VIIRS harmonization work.
+- **MODIS year-by-year data** — annual MODIS dataset files are organized in the shared folder.
+- **VIIRS year-by-year data** — annual VIIRS dataset files are organized in the shared folder.
+
+All three dataset collections are accessible from the same Google Drive folder. Refer to the dataset folder for the available years and files.
+
 ## Quick start
 
 Run commands from the repository directory containing `package.json` and `server.ts`.
@@ -99,28 +109,6 @@ Useful preflight endpoints:
 - `/api/v1/history/status` and `/api/v1/agnicalendar/status` — separate local dataset status.
 - `/api/v1/watchlists` — monitor storage, scheduler and delivery metadata.
 
-## Short judging demo
-
-1. **Hotspot Explorer → Region:** choose a named region such as **California / US West**.
-   Select a live window and inspect a real point. MODIS is crimson; VIIRS is yellow.
-   Dot size represents the nominal sensor footprint; FRP drives intensity. Read current
-   source/count/truncation labels rather than announcing fixed counts.
-2. **Overview:** switch the chart between counts and FRP. Toggle a sensor legend and
-   inspect a date with the slider or **View data**. Satellite/FRP filters also apply to
-   the live calendar, sensor comparison and their downloads.
-3. **Sensor Comparison:** highlight a footprint and inspect a paired cell. Explain that
-   raw pixels are not unique fires and read the actual calibration status/limitations.
-4. **Calendar:** show Daily calendar, then **Monthly AgniCalendar** if its local data is
-   available. Select a year/month and use **Inspect this month below** or the existing
-   map/export action. Monthly records do not provide daily or weekly results.
-5. **Early monitoring** optionally shows map-based area selection and a threshold.
-   Do not promise an immediate new-observation alert during a short recording.
-6. **More → Data & Exports:** download the scoped calendar/hotspot CSV and show its source
-   metadata. Finish with **Methodology** and the limitations.
-
-The [three-minute storyboard](docs/pitch/storyboard.md) gives a recording sequence.
-If a service fails, show its honest error state. Use a local archive only as a separately
-labeled historical view when available; do not present it as live data.
 
 ## Checks and production startup
 
