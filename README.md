@@ -163,7 +163,7 @@ Vite frontend only; use Express (`npm start`) for the complete API-backed demo.
 
 | Need | Maintained entry point |
 |---|---|
-| Use the app | [User guide](docs/guides/user-guide.md) and [judging storyboard](docs/pitch/storyboard.md) |
+| Use the app | [User guide](docs/guides/user-guide.md)  |
 | Configure or deploy | [Configuration](docs/guides/configuration.md), [deployment and Docker](docs/guides/deployment.md) |
 | Import local data | [Pipeline](docs/pipeline.md), [historical archive](docs/historical-archive.md), [AgniCalendar](docs/agnicalendar.md) |
 | Understand sources | [Products and NASA research](docs/data/data-sources.md), [attribution notices](docs/data/attributions.md), [model provenance](docs/data/model-provenance.md) |
